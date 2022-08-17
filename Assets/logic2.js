@@ -2,7 +2,7 @@
 
 
 //Logic Nico
-let palindromo="anulalalunapaisajemontanaguaamoraromacomidaluzazulsillagatobotellacamarayosoypalindromocasaverdebanderaventanacangrejolarutanosaportootropasonaturaliniciaracaestoseralodoodolaresdonasbarcosmarcieloaviontierrapaisbicicletaestonoespalindromojugarseverlasalrevesusandounradarenelojorejero"
+let palindromo="anulalalunapaisajemontanaguaamoraromacomidaluzazulsillagatobotellacamarayosoypalindromocasaverdebanderaventanacangrejolarutanosaportootropasonaturaliniciaracaestoseralodoodolaresdonasbarcosmarcieloaviontierrapaisbicicletaestonoespalindromojugarseverlasalrevesusandounradarenelojorejero";
 
 function checkpalindromo(palindromo){
     let arrayPal=palindromo.split(""); //split is for separete in little parts
@@ -10,33 +10,23 @@ function checkpalindromo(palindromo){
     
     return palindromo==reversePal.join("");
 }
-const viewpalindrome = (string) => {
+const viewpalindrome = (palindromo) => {
     let size = 3;
     let view = [];
   
-    for (let i = 0; i < string.length; i++) {
-      let catn = string.substr(i, string.length);
-  
-
-      while ( catn>3 ){
-        let SubsString = catn.substr(0, j);
-  
-        if (revPalindrome(SubsString)) {
-          if (SubsString.length > length) {
-            result.push(SubsString);
-          }
-        }
-      }
-
+    for (let i = 0; i < palindromo.length; i++) {
+      let catn = palindromo.substr(i, palindromo.length);
+    
       for (let y = catn.length; y >= 0; y--) {
-        let SubsString = catn.substr(0, y);
+        let palinFound = catn.substr(0, y);
   
-        if (revPalindrome(SubsString)) {
-          if (SubsString.length > size) {
-            view.push(SubsString);
+        if (checkpalindromo(palinFound)) {
+          if (palinFound.length > size) {
+            view.push(palinFound);
           }
         }
       }
     }
     return view;
   };
+  console.log(viewpalindrome(palindromo))
