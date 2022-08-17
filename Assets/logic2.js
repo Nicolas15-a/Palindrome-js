@@ -10,6 +10,7 @@ function checkpalindromo(palindromo){
     
     return palindromo==reversePal.join("");
 }
+
 const viewpalindrome = (palindromo) => {
     let size = 3;
     let view = [];
@@ -20,13 +21,13 @@ const viewpalindrome = (palindromo) => {
       for (let y = catn.length; y >= 0; y--) {
         let palinFound = catn.substr(0, y);
   
-        if (checkpalindromo(palinFound)) {
-          if (palinFound.length > size) {
+        if (checkpalindromo(palinFound)&&(palinFound.length > size)) {
             view.push(palinFound);
-          }
         }
       }
     }
-    return view;
+
+    
   };
+  const viewResult=document.getElementById('label').innerHTML=viewpalindrome(palindromo)
   console.log(viewpalindrome(palindromo))

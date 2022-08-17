@@ -30,3 +30,7 @@ span{
   margin-top: 2%;  
   margin-left: 45%;
 }
+.containerText{
+  
+    text-overflow: ellipsis;
+}
